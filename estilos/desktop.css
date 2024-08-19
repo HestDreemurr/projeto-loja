@@ -1,0 +1,36 @@
+main {
+  display: flex;
+  padding: 0px 50px;
+}
+
+header {
+  padding-left: 60px;
+}
+
+#doces {
+  display: flex;
+  flex-flow: row wrap;
+  width: 1000px;
+}
+
+#doces > div {
+  margin: 10px;
+}
+
+#doces img {
+  width: auto;
+  width: 300px;
+  height: 286px;
+}
+
+#carrinho {
+  width: 350px;
+  align-self: flex-start;
+}
+
+.popup {
+  width: 600px;
+  height: auto;
+  padding: 35px;
+  align-self: center;
+}

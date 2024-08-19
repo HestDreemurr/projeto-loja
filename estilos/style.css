@@ -1,0 +1,314 @@
+@font-face {
+  src: url("../fontes/redhat.ttf") format("truetype");
+  font-family: "Red Hat";
+}
+
+@font-face {
+  src: url("../fontes/rhregular.ttf") format("truetype");
+  font-family: "RH Regular";
+}
+
+body {
+  background-color: hsl(13, 31%, 94%);
+  font-family: "Red Hat";
+}
+
+header {
+  padding: 0px 15px;
+}
+
+header > h1 {
+  font-size: 2.5em;
+}
+
+main {
+  padding: 0px 15px;
+}
+
+img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.addToCart {
+  display: block;
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 30px;
+  padding: 13px;
+  text-align: center;
+  width: 200px;
+  margin: auto;
+  font-family: "RH Regular";
+  
+  transform: translateY(-35px);
+}
+
+.addToCart:hover {
+  border: 1px solid #d98d00;
+}
+
+.addToCart > p {
+  margin: 0;
+  font-size: 15px;
+}
+
+#cart {
+  display: inline-block;
+  color: orange;
+  transform: translateY(5px);
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.select {
+  background-color: hsl(14, 86%, 42%);
+  color: white;
+}
+
+.select > p {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rm, .add {
+  font-size: 25px;
+}
+
+.infos {
+  margin-top: -25px;
+}
+
+.categoria {
+  color: #a77575ad;
+  font-size: 14px;
+}
+
+.nome {
+  margin-top: -6px;
+  font-family: "RH Regular";
+}
+
+.preco {
+  color: #dd7f00;
+  margin-top: -10px;
+}
+
+#carrinho {
+  background-color: white;
+  padding: 10px 25px;
+  border-radius: 10px;
+}
+
+#carrinho > h2 {
+  color: #c47610;
+}
+
+#carrinho > #itens > #vazio > p {
+  color: #a77575ad;
+  text-align: center;
+  font-size: 13px;
+}
+
+#carrinho img {
+  width: 128px;
+  height: 128px;
+  display: block;
+  margin: auto;
+}
+
+.pedidos {
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  font-family: "RH Regular";
+  border-bottom: 1px solid #0000001f;
+}
+
+.qp {
+  color: #6d6d6d81;
+  margin-top: -5px;
+}
+
+.quantidade {
+  color: #dd7f00;
+  margin-right: 8px;
+}
+
+.docePreco {
+  margin-right: 6px;
+}
+
+.precoTot {
+  color: dimgray;
+}
+
+.cancel {
+  align-self: center;
+  color: gray;
+}
+
+.cancel:hover {
+  color: #f96262;
+}
+
+#tot {
+  font-family: "RH Regular";
+  margin-top: 20px;
+  
+  display: flex;
+  justify-content: space-between;
+}
+
+#total {
+  font-family: "Red Hat";
+  font-size: 1.7em;
+  margin: 0;
+  padding: 0;
+  align-self: center;
+}
+
+.btn {
+  font-family: "Red Hat";
+  background-color: hsl(14, 86%, 42%);
+  border: none;
+  padding: 20px;
+  width: 100%;
+  color: white;
+  border-radius: 30px;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(1px) brightness(50%);
+  z-index: 1;
+}
+
+.popup-container {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup {
+  background: white;
+  padding: 30px 15px 15px 15px;
+  border-radius: 15px 15px 0px 0px;
+  height: 80%;
+  width: 100%;
+  align-self: flex-end;
+  font-family: "RH Regular";
+  overflow-y: auto;
+}
+
+.popup > img {
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 30px;
+}
+
+.popup > h1 {
+  font-family: "Red Hat";
+  font-size: 2.5em;
+  margin: -8px 0px;
+}
+
+#section-doces {
+  background-color: #fdd7c73f;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #ffd3c1;
+}
+
+#section-doces > ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.itemLi {
+  flex-flow: row nowrap;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #0000001f;
+  padding: 15px 0px;
+}
+
+.itemLi > div {
+  display: flex;
+  flex-direction: row nowrap;
+}
+
+#infos-item {
+  margin-left: 15px;
+  
+}
+
+#infos-item > p {
+  font-size: 14px;
+}
+
+#nome-item {
+  margin: 3px 0px 12px 0px;
+}
+
+#quant-item {
+  color: #dd7f00;
+  margin-right: 15px;
+}
+
+#preco-item {
+  color: #895959ad;
+}
+
+#total-item {
+  font-size: 16px;
+  vertical-align: center;
+}
+
+#quant-preco {
+  margin-bottom: 0;
+}
+
+.itemLi > p {
+  font-size: 14px;
+}
+
+.itemLi img {
+  width: 64px;
+  height: 64px;
+}
+
+#order-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+#order-total > span {
+  align-self: center;
+}
+
+#somaTotal {
+  font-family: "Red Hat";
+  font-size: 25px;
+}
