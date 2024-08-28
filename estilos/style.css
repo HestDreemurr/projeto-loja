@@ -4,8 +4,8 @@
 }
 
 @font-face {
-  src: url("../fontes/rhregular.ttf") format("truetype");
-  font-family: "RH Regular";
+  src: url("../fontes/redhat-semibold.ttf") format("truetype");
+  font-family: "Semi Bold";
 }
 
 body {
@@ -39,7 +39,7 @@ img {
   text-align: center;
   width: 200px;
   margin: auto;
-  font-family: "RH Regular";
+  font-family: "Semi Bold";
   
   transform: translateY(-35px);
 }
@@ -81,18 +81,19 @@ img {
 }
 
 .categoria {
-  color: #a77575ad;
+  color: #846161ad;
   font-size: 14px;
 }
 
 .nome {
   margin-top: -6px;
-  font-family: "RH Regular";
+  font-family: "Semi Bold";
 }
 
 .preco {
-  color: #dd7f00;
+  color: hsl(14, 86%, 42%);
   margin-top: -10px;
+  font-weight: bold;
 }
 
 #carrinho {
@@ -106,6 +107,7 @@ img {
 }
 
 #carrinho > #itens > #vazio > p {
+  font-weight: bold;
   color: #a77575ad;
   text-align: center;
   font-size: 13px;
@@ -125,22 +127,23 @@ img {
 .item {
   display: flex;
   justify-content: space-between;
-  font-family: "RH Regular";
   border-bottom: 1px solid #0000001f;
+  font-family: "Semi Bold";
 }
 
 .qp {
-  color: #6d6d6d81;
+  color: #353535c0;
   margin-top: -5px;
 }
 
 .quantidade {
-  color: #dd7f00;
+  color: hsl(14, 86%, 42%);
   margin-right: 8px;
 }
 
 .docePreco {
   margin-right: 6px;
+  font-family: "Red Hat";
 }
 
 .precoTot {
@@ -157,7 +160,6 @@ img {
 }
 
 #tot {
-  font-family: "RH Regular";
   margin-top: 20px;
   
   display: flex;
@@ -165,15 +167,14 @@ img {
 }
 
 #total {
-  font-family: "Red Hat";
   font-size: 1.7em;
   margin: 0;
   padding: 0;
   align-self: center;
+  font-weight: bold;
 }
 
 .btn {
-  font-family: "Red Hat";
   background-color: hsl(14, 86%, 42%);
   border: none;
   padding: 20px;
@@ -182,6 +183,11 @@ img {
   border-radius: 30px;
   margin-top: 20px;
   font-size: 15px;
+  font-family: "Semi Bold";
+}
+
+.btn:hover {
+  background-color: hsl(14, 86%, 35%);
 }
 
 .overlay {
@@ -215,7 +221,6 @@ img {
   height: 80%;
   width: 100%;
   align-self: flex-end;
-  font-family: "RH Regular";
   overflow-y: auto;
 }
 
@@ -227,7 +232,6 @@ img {
 }
 
 .popup > h1 {
-  font-family: "Red Hat";
   font-size: 2.5em;
   margin: -8px 0px;
 }
@@ -251,6 +255,7 @@ img {
   justify-content: space-between;
   border-bottom: 1px solid #0000001f;
   padding: 15px 0px;
+  font-family: "Semi Bold";
 }
 
 .itemLi > div {
@@ -281,8 +286,10 @@ img {
 }
 
 #total-item {
-  font-size: 16px;
+  font-size: 17px;
   vertical-align: center;
+  font-family: "Red Hat";
+  font-weight: bold;
 }
 
 #quant-preco {
@@ -309,6 +316,6 @@ img {
 }
 
 #somaTotal {
-  font-family: "Red Hat";
+  font-weight: bold;
   font-size: 25px;
 }

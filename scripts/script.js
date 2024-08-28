@@ -1,13 +1,14 @@
 setTimeout(() => {
   let divs = document.querySelectorAll("div.produto")
-  let docesObjeto = {}
+  let docesObjeto = {} // Objeto que vai conter a quantidade e o preço total dos doces selecionados
   
   divs.forEach(div => {
     let botao = div.querySelector(".addToCart")
     let imagem = div.querySelector("img")
-    let quantCart = document.querySelector("span#quant-cart")
+    let quantCart = document.querySelector("span#quant-cart") // Quantidade de itens no carrinho
     let itens = document.querySelector("div#itens")
-    let docePreco = Number(div.querySelector("p.preco").innerText.replace("$", ""))
+    let docePreco = Number(div.querySelector("p.preco").innerText.replace("$",
+    "")) // Preço do produto
     
     botao.addEventListener("click", function selected() {
         botao.removeEventListener("click", selected)
@@ -35,7 +36,7 @@ setTimeout(() => {
         li.innerHTML += "<span class='material-symbols-outlined cancel'>cancel</span>"
         
         let quantidade = li.querySelector("span.quantidade")
-        let precoTot = li.querySelector("span.precoTot")
+        let precoTot = li.querySelector("span.precoTot") // Preço total do produto
         let cancel = li.querySelector("span.cancel")
         docesObjeto[nome.innerText] = {
           precoTot: precoTot.innerText,
@@ -43,17 +44,7 @@ setTimeout(() => {
         }
         
         cancel.addEventListener("click", () => {
-          setTimeout(() => {
-            botao.addEventListener("click", selected)
-            }, 100)
-            imagem.style.border = "none"
-            botao.classList.remove("select")
-            botao.innerHTML = `<p><span class="material-symbols-outlined" id="cart">add_shopping_cart</span> Adicionar ao carrinho</p>`
-            li.remove()
-            quantCart.innerText = Number(quantCart.innerText) -
-            Number(quantidade.innerText.replace("x", ""))
-            delete docesObjeto[nome.innerText]
-            verificarCarrinho()
+          removerItem()
         })
         
         pedidos.appendChild(li)
@@ -84,16 +75,7 @@ setTimeout(() => {
             docesObjeto[nome.innerText]["precoTot"] = `$${novoPrecoTot.toFixed(2)}`
             docesObjeto[nome.innerText]["quant"] = `${novaQuantidade}x`
           } else {
-            setTimeout(() => {
-              botao.addEventListener("click", selected)
-            }, 100)
-            imagem.style.border = "none"
-            botao.classList.remove("select")
-            botao.innerHTML = `<p><span class="material-symbols-outlined" id="cart">add_shopping_cart</span> Adicionar ao carrinho</p>`
-            li.remove()
-            quantCart.innerText = Number(quantCart.innerText) - 1
-            delete docesObjeto[nome.innerText]
-            verificarCarrinho()
+            removerItem()
           }
         })
         
@@ -235,12 +217,27 @@ setTimeout(() => {
           total.innerText = `$${valorTot.toFixed(2)}`
         }
         
-        function verificarCarrinho() {
+        // Função que remove um produto do carrinho
+        function removerItem() {
+          setTimeout(() => {
+            botao.addEventListener("click", selected)
+          }, 100)
+          imagem.style.border = "none"
+          botao.classList.remove("select")
+          botao.innerHTML = `<p><span class="material-symbols-outlined" id="cart">add_shopping_cart</span> Adicionar ao carrinho</p>`
+          li.remove()
+          quantCart.innerText = Number(quantCart.innerText) -
+          Number(quantidade.innerText.replace("x", ""))
+          delete docesObjeto[nome.innerText]
+          console.log(quantCart.innerText)
+          
+          // Verifica se o carrinho está vazio
           if (quantCart.innerText == "0") {
             itens.querySelector("div#vazio").style.display = "block"
             itens.removeChild(itens.querySelector("div#tot"))
             itens.removeChild(itens.querySelector("button.btn"))
           } else {
+            /* Se o carrinho não estiver vazio após remover o item, o preço dele é removido do orderTotal (soma total do preço dos produtos) */
             let total = itens.querySelector("p#total")
             let precoTotal =
             Number(li.querySelector("span.precoTot").innerText.replace("$", ""))

@@ -14,7 +14,7 @@ fetch("data.json")
       img.alt = produto.name
       
       let imgDesktop = document.createElement("source")
-      imgDesktop.media = "(min-width: 1200px)"
+      imgDesktop.media = "(min-width: 1500px)"
       imgDesktop.srcset = produto.desktop
       imgDesktop.type = "image/jpeg"
       
@@ -30,6 +30,7 @@ fetch("data.json")
       
       picture.appendChild(imgDesktop)
       picture.appendChild(img)
+      
       div.appendChild(picture)
       div.appendChild(span)
       div.appendChild(infos)
